@@ -2,15 +2,20 @@ package development.parkenulm;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
@@ -24,6 +29,7 @@ import org.jsoup.nodes.Element;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -32,6 +38,7 @@ import io.paperdb.Paper;
 public class MainActivity extends AppCompatActivity {
 
     ParkhausListAdapter adapter;
+    ActivityResultLauncher<Intent> activityResultLauncher;
 
     /**
      * This method is called when the activity is first created.
@@ -51,6 +58,17 @@ public class MainActivity extends AppCompatActivity {
         } else adapter = new ParkhausListAdapter(ParkhausDB.getParkhausDB());
         ListView listView = findViewById(R.id.ParkhausList);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            String search = getString(R.string.parking_garage) + " " + adapter.getItem(position).toString() + " " + getString(R.string.ulm);
+            String url = "geo:0,0?q=" + search;
+            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            startActivity(i);
+
+        });
+        //Intent i = new Intent(this, DetailsActivity.class);
+        //i.putExtra("ParkhausName", adapter.getItem(position).toString());
+        //Log.d("ParkhausName", adapter.getItem(position).toString());
+        //this.startActivity(i);
         getData();
         Toolbar toolbar = findViewById(R.id.toolbar_main);
         toolbar.setTitle("Parken in Ulm");

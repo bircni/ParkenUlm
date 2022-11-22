@@ -36,14 +36,14 @@ public class ParkhausListAdapter extends BaseAdapter {
     }
 
     /**
-     * This method returns the item at the given position.
+     * This method returns the Name at the given position.
      *
      * @param i The position of the item.
-     * @return The item at the given position.
+     * @return The Name at the given position.
      */
     @Override
     public Object getItem(int i) {
-        return ph_data.get(i);
+        return ph_data.get(i).getHaus();
     }
 
     /**
