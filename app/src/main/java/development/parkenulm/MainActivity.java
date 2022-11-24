@@ -121,7 +121,6 @@ public class MainActivity extends AppCompatActivity {
                 && capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED);
     }
 
-
     public void getData() {
         Thread thread = new Thread(() -> {
             try {

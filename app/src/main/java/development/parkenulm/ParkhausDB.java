@@ -46,16 +46,16 @@ public class ParkhausDB {
      * @return the ParkhausDB
      */
     public static ArrayList<Parkhaus> getParkhausDB() {
-        ParkhausList.add(new Parkhaus("Am Bahnhof", "?", "?"));
-        ParkhausList.add(new Parkhaus("Am Rathaus", "?", "?"));
-        ParkhausList.add(new Parkhaus("Deutschhaus", "?", "?"));
-        ParkhausList.add(new Parkhaus("Fischerviertel", "?", "?"));
-        ParkhausList.add(new Parkhaus("Salzstadel", "?", "?"));
-        ParkhausList.add(new Parkhaus("Frauenstraße", "?", "?"));
-        ParkhausList.add(new Parkhaus("Basteicenter", "?", "?"));
-        ParkhausList.add(new Parkhaus("Maritim Hotel", "?", "?"));
-        ParkhausList.add(new Parkhaus("Kornhaus", "?", "?"));
-        ParkhausList.add(new Parkhaus("Theater", "?", "?"));
+        ParkhausList.add(new Parkhaus("Am Bahnhof", "540", "540"));
+        ParkhausList.add(new Parkhaus("Am Rathaus", "558", "558"));
+        ParkhausList.add(new Parkhaus("Deutschhaus", "594", "594"));
+        ParkhausList.add(new Parkhaus("Fischerviertel", "395", "395"));
+        ParkhausList.add(new Parkhaus("Salzstadel", "530", "530"));
+        ParkhausList.add(new Parkhaus("Frauenstraße", "720", "720"));
+        ParkhausList.add(new Parkhaus("Basteicenter", "400", "400"));
+        ParkhausList.add(new Parkhaus("Maritim Hotel", "235", "235"));
+        ParkhausList.add(new Parkhaus("Kornhaus", "135", "135"));
+        ParkhausList.add(new Parkhaus("Theater", "80", "80"));
         return ParkhausList;
     }
 

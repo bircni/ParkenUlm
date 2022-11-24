@@ -79,14 +79,14 @@ public class ParkhausListAdapter extends BaseAdapter {
 
     public void Colorize(TextView parkhaus_Frei, TextView parkhaus_Plaetze, TextView parkhaus_Name, String frei, String platz) {
         Thread thread = new Thread(() -> {
-            if (!frei.contains("k")) {
+            if (frei.matches("[0-9]*")) {
                 int freiInt = Integer.parseInt(frei);
                 int platzInt = Integer.parseInt(platz);
+                boolean quater = freiInt < platzInt / 4;
+                parkhaus_Frei.getTag(R.color.black);
                 if (freiInt < 30) {
                     parkhaus_Frei.setTextColor(Color.RED);
-                }
-                boolean fifty = freiInt > platzInt / 2;
-                if (freiInt > 30 && !fifty) {
+                } else if (freiInt > 30 && quater) {
                     parkhaus_Frei.setTextColor(Color.YELLOW);
                 }
             } else {
