@@ -7,4 +7,9 @@
     <string name="frei">Frei</string>
     <string name="name">Name</string>
     <string name="ulm">Ulm</string>
+    <string name="maps">In Karten öffnen</string>
+    <string name="no_open_times">Keine Öffnungszeiten verfügbar</string>
+    <string name="open_24h">Jeden Tag 24h geöffnet</string>
+    <string name="toolbar_title">Parken in Ulm</string>
+    <string name="map_content">Parkhaus auf der Karte</string>
 </resources>

@@ -1,38 +1,40 @@
 package development.parkenulm;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
-import android.widget.Toast;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.Scanner;
 
 import io.paperdb.Paper;
 
 public class DetailsActivity extends AppCompatActivity {
 
-    String HTML;
     String parkhausName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
-        HTML = Paper.book().read("HTML");
-        readHTML(HTML);
         parkhausName = getIntent().getStringExtra("ParkhausName");
+        Button button = findViewById(R.id.maps_button);
+        button.setOnClickListener(v -> {
+            String search = getString(R.string.parking_garage) + " " + parkhausName + " " + getString(R.string.ulm);
+            String url = "geo:0,0?q=" + search;
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+            intent.setPackage("com.google.android.apps.maps");
+            startActivity(intent);
+        });
+        TextView openTimes = findViewById(R.id.openTV);
+        openTimes.setText(getOpenTimes());
         Toolbar toolbar_list = findViewById(R.id.toolbar_details);
         setSupportActionBar(toolbar_list);
         if (getSupportActionBar() != null) {
@@ -40,22 +42,32 @@ public class DetailsActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
+        ImageView map = findViewById(R.id.mapView);
+        map.setImageResource(getPath());
+
     }
 
-    public void readHTML(String content) {
-        Log.d("LOOOOOG", "readHTML: " + content);
-        ArrayList<ParkhausHTML> parkhausHTMLArrayList = ParkhausDB.getHTML_Strings();
-        String HTML_String = "";
-        for (ParkhausHTML parkhausHTML : parkhausHTMLArrayList) {
-            if (parkhausHTML.getHaus().equals(parkhausName)) {
-                HTML_String = parkhausHTML.getHTML_String();
+
+    @SuppressLint("DiscouragedApi")
+    private int getPath() {
+        String drawableName = parkhausName.toLowerCase().replace(" ", "_").replace("ß", "ss");
+        return getResources().getIdentifier(drawableName, "drawable", getPackageName());
+    }
+
+    private String getOpenTimes() {
+        ArrayList<Parkhaus> parkhausDB = Paper.book().read("ParkhausDB");
+        assert parkhausDB != null;
+        for (Parkhaus parkhaus : parkhausDB) {
+            if (parkhaus.getHaus().equals(parkhausName)) {
+                return openTimesTranslator(parkhaus.getOpenTimes());
             }
         }
+        return getString(R.string.no_open_times);
     }
 
-    public String checkString(String s) {
-        if (s.contains("/")) return s.substring(s.indexOf("/") + 2);
-        else return s;
+    private String openTimesTranslator(String input) {
+        if (input.contains("täglich durchgehend")) return getString(R.string.open_24h);
+        else return input;
     }
 
     /**

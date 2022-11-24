@@ -5,8 +5,10 @@ package development.parkenulm;
  */
 public class Parkhaus {
     private final String name;
-    public String freiePlaetze;
+    public final String freiePlaetze;
     private final String platzInsg;
+
+    private final String openTimes;
 
     /**
      * Constructor for the Parkhaus class.
@@ -15,10 +17,11 @@ public class Parkhaus {
      * @param freiePlaetze The exchange rate for one euro.
      * @param platzInsg    The platzInsg of the country.
      */
-    public Parkhaus(String name, String platzInsg, String freiePlaetze) {
+    public Parkhaus(String name, String platzInsg, String freiePlaetze, String openTimes) {
         this.name = name;
         this.freiePlaetze = freiePlaetze;
         this.platzInsg = platzInsg;
+        this.openTimes = openTimes;
     }
 
     /**
@@ -40,5 +43,12 @@ public class Parkhaus {
      */
     public String getFrei() {
         return freiePlaetze;
+    }
+
+    /**
+     * @return the openTimes
+     */
+    public String getOpenTimes() {
+        return openTimes;
     }
 }

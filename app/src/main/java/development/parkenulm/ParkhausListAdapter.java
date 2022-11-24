@@ -10,14 +10,18 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 
 
 public class ParkhausListAdapter extends BaseAdapter {
     private ArrayList<Parkhaus> ph_data;
+    final AppCompatActivity activity;
 
-    public ParkhausListAdapter(ArrayList<Parkhaus> ph_data) {
+    public ParkhausListAdapter(ArrayList<Parkhaus> ph_data, AppCompatActivity activity) {
         this.ph_data = ph_data;
+        this.activity = activity;
     }
 
     public void updateData(ArrayList<Parkhaus> newData) {
@@ -85,14 +89,16 @@ public class ParkhausListAdapter extends BaseAdapter {
                 boolean quater = freiInt < platzInt / 4;
                 parkhaus_Frei.getTag(R.color.black);
                 if (freiInt < 30) {
-                    parkhaus_Frei.setTextColor(Color.RED);
+                    activity.runOnUiThread(() -> parkhaus_Frei.setTextColor(Color.RED));
                 } else if (freiInt > 30 && quater) {
-                    parkhaus_Frei.setTextColor(Color.YELLOW);
+                    activity.runOnUiThread(() -> parkhaus_Frei.setTextColor(Color.YELLOW));
                 }
             } else {
-                parkhaus_Frei.setTextColor(Color.DKGRAY);
-                parkhaus_Plaetze.setTextColor(Color.DKGRAY);
-                parkhaus_Name.setTextColor(Color.DKGRAY);
+                activity.runOnUiThread(() -> {
+                    parkhaus_Frei.setTextColor(Color.DKGRAY);
+                    parkhaus_Plaetze.setTextColor(Color.DKGRAY);
+                    parkhaus_Name.setTextColor(Color.DKGRAY);
+                });
             }
         });
         thread.start();
