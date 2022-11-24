@@ -3,6 +3,7 @@ package development.parkenulm;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -91,13 +92,28 @@ public class ParkhausListAdapter extends BaseAdapter {
                 if (freiInt < 30) {
                     activity.runOnUiThread(() -> parkhaus_Frei.setTextColor(Color.RED));
                 } else if (freiInt > 30 && quater) {
-                    activity.runOnUiThread(() -> parkhaus_Frei.setTextColor(Color.YELLOW));
+                    activity.runOnUiThread(() -> parkhaus_Frei.setTextColor(Color.rgb(255, 136, 0)));
                 }
             } else {
                 activity.runOnUiThread(() -> {
-                    parkhaus_Frei.setTextColor(Color.DKGRAY);
-                    parkhaus_Plaetze.setTextColor(Color.DKGRAY);
-                    parkhaus_Name.setTextColor(Color.DKGRAY);
+                    int nightModeFlags =
+                            activity.getResources().getConfiguration().uiMode &
+                                    Configuration.UI_MODE_NIGHT_MASK;
+                    switch (nightModeFlags) {
+                        case Configuration.UI_MODE_NIGHT_YES:
+                            parkhaus_Frei.setTextColor(Color.DKGRAY);
+                            parkhaus_Plaetze.setTextColor(Color.DKGRAY);
+                            parkhaus_Name.setTextColor(Color.DKGRAY);
+                            break;
+                        case Configuration.UI_MODE_NIGHT_NO:
+                            parkhaus_Frei.setTextColor(Color.LTGRAY);
+                            parkhaus_Plaetze.setTextColor(Color.LTGRAY);
+                            parkhaus_Name.setTextColor(Color.LTGRAY);
+                            break;
+                        case Configuration.UI_MODE_NIGHT_UNDEFINED:
+                            break;
+                    }
+
                 });
             }
         });

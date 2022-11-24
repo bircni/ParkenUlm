@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import io.paperdb.Paper;
 
@@ -44,7 +45,18 @@ public class DetailsActivity extends AppCompatActivity {
         }
         ImageView map = findViewById(R.id.mapView);
         map.setImageResource(getPath());
+        getFreePlaces();
+    }
 
+    private void getFreePlaces() {
+        ArrayList<Parkhaus> parkhausDB = Paper.book().read("ParkhausDB");
+        assert parkhausDB != null;
+        for (Parkhaus parkhaus : parkhausDB) {
+            if (parkhaus.getHaus().equals(parkhausName)) {
+                TextView freePlaces = findViewById(R.id.freePlacesTV);
+                freePlaces.setText(getString(R.string.free_places, parkhaus.getFrei()));
+            }
+        }
     }
 
 
@@ -66,8 +78,9 @@ public class DetailsActivity extends AppCompatActivity {
     }
 
     private String openTimesTranslator(String input) {
-        if (input.contains("täglich durchgehend")) return getString(R.string.open_24h);
-        else return input;
+        if (!Locale.getDefault().getLanguage().equals("de") && input.contains("täglich durchgehend")) {
+            return getString(R.string.open_24h);
+        } else return input;
     }
 
     /**

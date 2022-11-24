@@ -7,7 +7,6 @@ import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
@@ -135,7 +134,6 @@ public class MainActivity extends AppCompatActivity {
                         String platz = Objects.requireNonNull(a.select("td").next().first()).text();
                         String frei = Objects.requireNonNull(a.select("td").next().next().first()).text();
                         String open = Objects.requireNonNull(a.select("td").next().next().next().first()).text();
-                        Log.d("Parkhaus", open);
                         parkhausList.add(new Parkhaus(haus, platz, frei, open));
                     }
                     Paper.book().write("ParkhausDB", parkhausList);

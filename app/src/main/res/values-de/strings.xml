@@ -12,4 +12,5 @@
     <string name="open_24h">Jeden Tag 24h geöffnet</string>
     <string name="toolbar_title">Parken in Ulm</string>
     <string name="map_content">Parkhaus auf der Karte</string>
+    <string name="free_places">Freie Plätze: %s</string>
 </resources>
