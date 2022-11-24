@@ -13,4 +13,5 @@
     <string name="toolbar_title">Parken in Ulm</string>
     <string name="map_content">Parkhaus auf der Karte</string>
     <string name="free_places">Freie Plätze: %s</string>
+    <string name="no_maps_app">Keine Karten App installiert</string>
 </resources>

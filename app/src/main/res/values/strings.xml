@@ -13,4 +13,5 @@
     <string name="toolbar_title">Parking in Ulm</string>
     <string name="map_content">Parking Garage on the map</string>
     <string name="free_places">Free places: %s</string>
+    <string name="no_maps_app">No maps app installed</string>
 </resources>

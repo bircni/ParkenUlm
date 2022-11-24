@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -32,7 +33,11 @@ public class DetailsActivity extends AppCompatActivity {
             String url = "geo:0,0?q=" + search;
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
             intent.setPackage("com.google.android.apps.maps");
-            startActivity(intent);
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, getString(R.string.no_maps_app), Toast.LENGTH_SHORT).show();
+            }
         });
         TextView openTimes = findViewById(R.id.openTV);
         openTimes.setText(getOpenTimes());
