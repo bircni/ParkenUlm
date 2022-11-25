@@ -1,4 +1,4 @@
-[![ParkenUlm](https://github.com/bircni/ParkenUlm/actions/workflows/gradle.yml/badge.svg)](https://github.com/bircni/ParkenUlm/actions/workflows/gradle.yml) 
+[![ParkenUlm](https://github.com/bircni/ParkenUlm/actions/workflows/gradle.yml/badge.svg)](https://github.com/bircni/ParkenUlm/actions/workflows/gradle.yml)
 <a><img src="https://img.shields.io/badge/Version-v1.0--beta.1-important"/></a>
 
 # ParkenUlm
@@ -7,10 +7,10 @@
 
  A small Android App to see the current usage of the parking garages in Ulm, Germany.  
  The data is provided by the city of Ulm.  
- Website with the original data: [Parken in Ulm](https://www.parken-in-ulm.de/)
-
+ 
 - supports dark mode
-- supports Android N (API level 24) and higher
+- uses Internet connection only to fetch data
+- supports Android N (API level 25) and higher
 - Languages: German, English
 
 ## Screenshots
@@ -60,3 +60,12 @@ If you want to contribute - open an issue or a pull request.
 1. Fork the Project
 2. Use understandble commit messages
 3. Open a Pull Request
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Thanks to
+
+- [Parken in Ulm](https://www.parken-in-ulm.de/) for the data
+- [@dj82atwork](https://github.com/dj82atwork) for the icon and testing
