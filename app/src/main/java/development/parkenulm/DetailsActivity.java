@@ -1,14 +1,9 @@
 package development.parkenulm;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -48,9 +43,8 @@ public class DetailsActivity extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
-        ImageView map = findViewById(R.id.mapView);
-        map.setImageResource(getPath());
-        getFreePlaces();
+        //ImageView map = findViewById(R.id.mapView);
+        //map.setImageResource(getPath());
     }
 
     private void getFreePlaces() {
