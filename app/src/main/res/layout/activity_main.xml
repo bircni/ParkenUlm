@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+<!--
     <TextView
         android:id="@+id/parkhaus"
         android:layout_width="wrap_content"
@@ -25,12 +25,13 @@
         android:layout_marginTop="4dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/parking_garage"
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_main"
         tools:ignore="TextSizeCheck" />
-
+    -->
+    <!--
     <TextView
         android:id="@+id/platz"
         android:layout_width="60dp"
@@ -44,30 +45,31 @@
         app:layout_constraintEnd_toStartOf="@+id/free"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_main"
         tools:ignore="TextSizeCheck" />
-
+        -->
+    <!--
     <TextView
         android:id="@+id/free"
         android:layout_width="50dp"
         android:layout_height="30dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="76dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/frei"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/swipeToRefresh"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_main"
         tools:ignore="TextSizeCheck" />
+        -->
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeToRefresh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/parkhaus">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_main">
 
         <ListView
             android:id="@+id/ParkhausList"
@@ -80,4 +82,5 @@
             tools:context=".MainActivity" />
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

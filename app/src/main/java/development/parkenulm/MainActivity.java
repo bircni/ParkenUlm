@@ -6,9 +6,12 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -52,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         } else adapter = new ParkhausListAdapter(ParkhausDB.getParkhausDB(), this);
         ListView listView = findViewById(R.id.ParkhausList);
         listView.setAdapter(adapter);
+        listView.setClickable(true);
         listView.setOnItemClickListener((parent, view, position, id) -> {
             Intent intent = new Intent(this, DetailsActivity.class);
             intent.putExtra("ParkhausName", adapter.getItem(position).toString());

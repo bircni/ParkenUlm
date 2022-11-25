@@ -27,18 +27,18 @@ public class DetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
         parkhausName = getIntent().getStringExtra("ParkhausName");
-        Button button = findViewById(R.id.maps_button);
-        button.setOnClickListener(v -> {
-            String search = getString(R.string.parking_garage) + " " + parkhausName + " " + getString(R.string.ulm);
-            String url = "geo:0,0?q=" + search;
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-            intent.setPackage("com.google.android.apps.maps");
-            if (intent.resolveActivity(getPackageManager()) != null) {
-                startActivity(intent);
-            } else {
-                Toast.makeText(this, getString(R.string.no_maps_app), Toast.LENGTH_SHORT).show();
-            }
-        });
+        //Button button = findViewById(R.id.maps_button);
+        //button.setOnClickListener(v -> {
+        //    String search = getString(R.string.parking_garage) + " " + parkhausName + " " + getString(R.string.ulm);
+        //    String url = "geo:0,0?q=" + search;
+        //    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        //    intent.setPackage("com.google.android.apps.maps");
+        //    if (intent.resolveActivity(getPackageManager()) != null) {
+        //        startActivity(intent);
+        //    } else {
+        //        Toast.makeText(this, getString(R.string.no_maps_app), Toast.LENGTH_SHORT).show();
+        //    }
+        //});
         TextView openTimes = findViewById(R.id.openTV);
         openTimes.setText(getOpenTimes());
         Toolbar toolbar_list = findViewById(R.id.toolbar_details);
@@ -85,7 +85,7 @@ public class DetailsActivity extends AppCompatActivity {
     private String openTimesTranslator(String input) {
         if (!Locale.getDefault().getLanguage().equals("de") && input.contains("täglich durchgehend")) {
             return getString(R.string.open_24h);
-        } else return input;
+        } else return input.replace(",", "\n");
     }
 
     /**
