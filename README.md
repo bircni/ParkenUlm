@@ -7,7 +7,7 @@
 
  A small Android App to see the current usage of the parking garages in Ulm, Germany.  
  The data is provided by the city of Ulm.  
- 
+
 - supports dark mode
 - uses Internet connection only to fetch data
 - supports Android N (API level 25) and higher
@@ -16,14 +16,11 @@
 ## Screenshots
 
 <div>
-<center>
 <img src=".github/graphics/ParkenUlm-dark-Pixel6.png" width="300"  />
 <img style="margin-left: 100px" src=".github/graphics/ParkenUlm-details-dark-Pixel6.png" width="300"/>
-</center>
 </div>
 
 </br>
-<center>
 <details>
 <summary>Bright Mode</summary>
 </br>
@@ -34,7 +31,6 @@
 
 </div>
 </details>
-</center>
 
 ## Prerequisites
 
@@ -60,10 +56,6 @@ If you want to contribute - open an issue or a pull request.
 1. Fork the Project
 2. Use understandble commit messages
 3. Open a Pull Request
-
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Thanks to
 
