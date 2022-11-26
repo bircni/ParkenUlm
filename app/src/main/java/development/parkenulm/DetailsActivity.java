@@ -23,18 +23,6 @@ public class DetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
         parkhausName = getIntent().getStringExtra("ParkhausName");
-        //Button button = findViewById(R.id.maps_button);
-        //button.setOnClickListener(v -> {
-        //    String search = getString(R.string.parking_garage) + " " + parkhausName + " " + getString(R.string.ulm);
-        //    String url = "geo:0,0?q=" + search;
-        //    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        //    intent.setPackage("com.google.android.apps.maps");
-        //    if (intent.resolveActivity(getPackageManager()) != null) {
-        //        startActivity(intent);
-        //    } else {
-        //        Toast.makeText(this, getString(R.string.no_maps_app), Toast.LENGTH_SHORT).show();
-        //    }
-        //});
         TextView openTimes = findViewById(R.id.openTV);
         openTimes.setText(getOpenTimes());
         Toolbar toolbar_list = findViewById(R.id.toolbar_details);
@@ -47,18 +35,6 @@ public class DetailsActivity extends AppCompatActivity {
         ImageView map = findViewById(R.id.map);
         map.setImageResource(getPath());
     }
-
-    private void getFreePlaces() {
-        ArrayList<Parkhaus> parkhausDB = Paper.book().read("ParkhausDB");
-        assert parkhausDB != null;
-        for (Parkhaus parkhaus : parkhausDB) {
-            if (parkhaus.getHaus().equals(parkhausName)) {
-                TextView freePlaces = findViewById(R.id.freePlacesTV);
-                freePlaces.setText(getString(R.string.free_places, parkhaus.getFrei()));
-            }
-        }
-    }
-
 
     @SuppressLint("DiscouragedApi")
     private int getPath() {

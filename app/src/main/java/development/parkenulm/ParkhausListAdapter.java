@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.progressindicator.CircularProgressIndicator;
 
 import java.util.ArrayList;
 
@@ -78,8 +81,6 @@ public class ParkhausListAdapter extends BaseAdapter {
         }
         TextView parkhaus_Name = view.findViewById(R.id.ParkhausListItemName);
         parkhaus_Name.setText(db.getHaus());
-        //TextView parkhaus_Plaetze = view.findViewById(R.id.ParkhausListItemPlaetze);
-        //parkhaus_Plaetze.setText(db.getPlatz());
         ImageButton button = view.findViewById(R.id.map_button);
         View finalView = view;
         button.setOnClickListener(v -> {
@@ -98,51 +99,78 @@ public class ParkhausListAdapter extends BaseAdapter {
             intent.putExtra("ParkhausName", db.getHaus());
             activity.startActivity(intent);
         });
-        TextView parkhaus_Frei = view.findViewById(R.id.ParkhausListItemFreiePlaetze);
-        parkhaus_Frei.setText(db.getFrei());
-        //Colorize(parkhaus_Frei, parkhaus_Plaetze, parkhaus_Name, db.getFrei(), db.getPlatz());
-        Colorize(parkhaus_Frei, parkhaus_Name, db.getFrei(), db.getPlatz());
+        CircularProgressIndicator progressBar = view.findViewById(R.id.ParkhausProgress);
+        TextView progressBarinsideText = view.findViewById(R.id.progressBarinsideText);
+        ProgressBar(progressBar, progressBarinsideText, db.getFrei(), db.getPlatz());
         return view;
     }
 
-    public void Colorize(TextView parkhaus_Frei, TextView parkhaus_Name, String frei, String platz) {
-        Thread thread = new Thread(() -> {
+    private void ProgressBar(CircularProgressIndicator progressBar, TextView progressText, String frei, String platz) {
+        new Thread(() -> {
             if (frei.matches("[0-9]*")) {
-                int freiInt = Integer.parseInt(frei);
-                int platzInt = Integer.parseInt(platz);
-                boolean quater = freiInt < platzInt / 4;
-                parkhaus_Frei.getTag(R.color.black);
-                if (freiInt < 30) {
-                    activity.runOnUiThread(() -> parkhaus_Frei.setTextColor(Color.RED));
-                } else if (freiInt > 30 && quater) {
-                    activity.runOnUiThread(() -> parkhaus_Frei.setTextColor(Color.rgb(255, 136, 0)));
-                }
-                else {
-                    activity.runOnUiThread(() -> parkhaus_Frei.setTextColor(Color.GREEN));
+                if (platz.matches("[0-9]*")) {
+                    int freiInt = Integer.parseInt(frei);
+                    int platzInt = Integer.parseInt(platz);
+                    int progress = platzInt - freiInt;
+                    boolean quater = freiInt < platzInt / 4;
+                    activity.runOnUiThread(() -> {
+                        progressBar.setMax(platzInt);
+                        progressBar.setProgress(progress);
+                        progressText.setText(frei);
+                        progressBar.setIndicatorColor(Color.RED);
+                        int nightModeFlags =
+                                activity.getResources().getConfiguration().uiMode &
+                                        Configuration.UI_MODE_NIGHT_MASK;
+                        switch (nightModeFlags) {
+                            case Configuration.UI_MODE_NIGHT_YES:
+                                progressBar.setIndicatorColor(Color.DKGRAY);
+                                break;
+                            case Configuration.UI_MODE_NIGHT_NO:
+                                progressBar.setIndicatorColor(Color.LTGRAY);
+                                break;
+                            case Configuration.UI_MODE_NIGHT_UNDEFINED:
+                                break;
+                        }
+                        if (freiInt == 0) {
+                            progressBar.setIndicatorColor(Color.RED);
+                        }
+                        if (freiInt < 30) {
+                            progressText.setTextColor(Color.RED);
+                            progressBar.setTrackColor(Color.RED);
+                        } else if (freiInt > 30 && quater) {
+                            progressText.setTextColor(Color.YELLOW);
+                            progressBar.setTrackColor(Color.YELLOW);
+                        } else {
+                            progressText.setTextColor(Color.GREEN);
+                            progressBar.setTrackColor(Color.GREEN);
+                        }
+                    });
+                } else {
+                    activity.runOnUiThread(() -> {
+                        progressBar.setVisibility(View.INVISIBLE);
+                        progressText.setVisibility(View.INVISIBLE);
+                        Log.e("ProgressBar", "platz is not a number");
+                    });
                 }
             } else {
                 activity.runOnUiThread(() -> {
+                    progressText.setText(frei);
+                    progressBar.setProgress(0);
                     int nightModeFlags =
                             activity.getResources().getConfiguration().uiMode &
                                     Configuration.UI_MODE_NIGHT_MASK;
                     switch (nightModeFlags) {
                         case Configuration.UI_MODE_NIGHT_YES:
-                            parkhaus_Frei.setTextColor(Color.DKGRAY);
-                            //parkhaus_Plaetze.setTextColor(Color.DKGRAY);
-                            parkhaus_Name.setTextColor(Color.DKGRAY);
+                            progressBar.setTrackColor(Color.DKGRAY);
                             break;
                         case Configuration.UI_MODE_NIGHT_NO:
-                            parkhaus_Frei.setTextColor(Color.LTGRAY);
-                            //parkhaus_Plaetze.setTextColor(Color.LTGRAY);
-                            parkhaus_Name.setTextColor(Color.LTGRAY);
+                            progressBar.setTrackColor(Color.LTGRAY);
                             break;
                         case Configuration.UI_MODE_NIGHT_UNDEFINED:
                             break;
                     }
-
                 });
             }
-        });
-        thread.start();
+        }).start();
     }
 }
