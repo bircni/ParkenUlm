@@ -1,5 +1,12 @@
-[![ParkenUlm](https://github.com/bircni/ParkenUlm/actions/workflows/gradle.yml/badge.svg)](https://github.com/bircni/ParkenUlm/actions/workflows/gradle.yml)
-<a><img src="https://img.shields.io/badge/Version-v1.0--beta.1-important"/></a>
+[![Stargazers](https://img.shields.io/github/stars/bircni/ParkenUlm.svg)](https://github.com/bircni/ParkenUlm/stargazers)
+[![Issues](https://img.shields.io/github/issues/bircni/ParkenUlm)](https://github.com/bircni/ParkenUlm/issues)
+[![Gradle-Build](https://github.com/bircni/ParkenUlm/actions/workflows/gradle.yml/badge.svg)](https://github.com/bircni/ParkenUlm/actions/workflows/gradle.yml)
+[![Release](https://img.shields.io/github/v/release/bircni/ParkenUlm?include_prereleases&style=plastic)]( https://github.com/bircni/ParkenUlm/releases)
+
+[stars-shield]: https://img.shields.io/github/stars/bircni/ParkenUlm.svg
+[stars-url]: https://github.com/bircni/ParkenUlm/stargazers
+[issues-shield]: https://img.shields.io/github/issues/bircni/ParkenUlm.svg
+[issues-url]: https://github.com/bircni/CurrencyConverter/issues
 
 # ParkenUlm
 
