@@ -67,6 +67,10 @@ If you want to contribute - open an issue or a pull request.
 2. Use understandble commit messages
 3. Open a Pull Request
 
+## License
+
+Distributed under the GNU General Public License v3.0. See `LICENSE` for more information.
+
 ## Thanks to
 
 - [Parken in Ulm](https://www.parken-in-ulm.de/) for the data
