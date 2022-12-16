@@ -3,10 +3,11 @@
 [![Gradle-Build](https://github.com/bircni/ParkenUlm/actions/workflows/gradle.yml/badge.svg)](https://github.com/bircni/ParkenUlm/actions/workflows/gradle.yml)
 [![Release](https://img.shields.io/github/v/release/bircni/ParkenUlm?include_prereleases&style=plastic)]( https://github.com/bircni/ParkenUlm/releases)
 
-[stars-shield]: https://img.shields.io/github/stars/bircni/ParkenUlm.svg
-[stars-url]: https://github.com/bircni/ParkenUlm/stargazers
-[issues-shield]: https://img.shields.io/github/issues/bircni/ParkenUlm.svg
-[issues-url]: https://github.com/bircni/CurrencyConverter/issues
+<div align="center">
+  <!-- Centered README header hack -->
+  <img width="500" src=".github/graphics/github-preview.png">
+  <br><br>
+</div>
 
 # ParkenUlm
 
