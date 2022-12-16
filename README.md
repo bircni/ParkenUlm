@@ -1,7 +1,3 @@
-[![Stargazers](https://img.shields.io/github/stars/bircni/ParkenUlm.svg)](https://github.com/bircni/ParkenUlm/stargazers)
-[![Issues](https://img.shields.io/github/issues/bircni/ParkenUlm)](https://github.com/bircni/ParkenUlm/issues)
-[![Gradle-Build](https://github.com/bircni/ParkenUlm/actions/workflows/gradle.yml/badge.svg)](https://github.com/bircni/ParkenUlm/actions/workflows/gradle.yml)
-[![Release](https://img.shields.io/github/v/release/bircni/ParkenUlm?include_prereleases&style=plastic)]( https://github.com/bircni/ParkenUlm/releases)
 
 <div align="center">
   <!-- Centered README header hack -->
@@ -9,6 +5,10 @@
   <br><br>
 </div>
 
+[![Stargazers](https://img.shields.io/github/stars/bircni/ParkenUlm.svg)](https://github.com/bircni/ParkenUlm/stargazers)
+[![Issues](https://img.shields.io/github/issues/bircni/ParkenUlm)](https://github.com/bircni/ParkenUlm/issues)
+[![Gradle-Build](https://github.com/bircni/ParkenUlm/actions/workflows/gradle.yml/badge.svg)](https://github.com/bircni/ParkenUlm/actions/workflows/gradle.yml)
+[![Release](https://img.shields.io/github/v/release/bircni/ParkenUlm?include_prereleases&style=plastic)]( https://github.com/bircni/ParkenUlm/releases)
 # ParkenUlm
 
 <a href='https://play.google.com/store/apps/details?id=development.parkenulm'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height='80px'/></a>
