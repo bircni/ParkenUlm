@@ -1,11 +1,8 @@
-
 <div align="center">
   <img width="500" src=".github/graphics/github-preview.png">
   <br><br>
 </div>
 
-[![Stargazers](https://img.shields.io/github/stars/bircni/ParkenUlm.svg)](https://github.com/bircni/ParkenUlm/stargazers)
-[![Issues](https://img.shields.io/github/issues/bircni/ParkenUlm)](https://github.com/bircni/ParkenUlm/issues)
 [![Gradle-Build](https://github.com/bircni/ParkenUlm/actions/workflows/gradle.yml/badge.svg)](https://github.com/bircni/ParkenUlm/actions/workflows/gradle.yml)
 [![Release](https://img.shields.io/github/v/release/bircni/ParkenUlm?include_prereleases&style=plastic)]( https://github.com/bircni/ParkenUlm/releases)
 # ParkenUlm
