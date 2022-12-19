@@ -36,6 +36,8 @@ import io.paperdb.Paper;
 public class MainActivity extends AppCompatActivity {
 
     ParkhausListAdapter adapter;
+    //0 = don't sort, 1 = sort by name, 2 = sort by free places
+    static int sortBy;
 
     /**
      * This method is called when the activity is first created.
@@ -53,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
         if (Paper.book().contains("ParkhausDB")) {
             adapter = new ParkhausListAdapter(Paper.book().read("ParkhausDB"), this);
         } else adapter = new ParkhausListAdapter(ParkhausDB.getParkhausDB(), this);
+        if (Paper.book().contains("sortBy")) {
+            sortBy = Paper.book().read("sortBy");
+        } else if (sortBy > 2 || sortBy == 0) {
+            sortBy = 0;
+        }
         ListView listView = findViewById(R.id.ParkhausList);
         listView.setAdapter(adapter);
         listView.setClickable(true);
@@ -94,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param item The menu item that was clicked
      */
-    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.refresh_menu) {
@@ -103,10 +109,23 @@ public class MainActivity extends AppCompatActivity {
         }
         if (item.getItemId() == R.id.sort_sub1) {
             Log.d("Sort", "Sort by name");
+            sortBy = 1;
+            Paper.book().write("sortBy", sortBy);
+            getData();
             return true;
         }
         if (item.getItemId() == R.id.sort_sub2) {
             Log.d("Sort", "Sort by free places");
+            sortBy = 2;
+            Paper.book().write("sortBy", sortBy);
+            getData();
+            return true;
+        }
+        if (item.getItemId() == R.id.sort_sub2) {
+            Log.d("Sort", "Reset sort");
+            sortBy = 0;
+            Paper.book().write("sortBy", sortBy);
+            getData();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -148,8 +167,7 @@ public class MainActivity extends AppCompatActivity {
                         String open = Objects.requireNonNull(a.select("td").next().next().next().first()).text();
                         parkhausList.add(new Parkhaus(haus, platz, frei, open));
                     }
-                    parkhausList.sort(Comparator.comparing((Parkhaus::getFreiAsInt)));
-                    Collections.reverse(parkhausList);
+                    sort(parkhausList);
                     Paper.book().write("ParkhausDB", parkhausList);
                     runOnUiThread(() -> {
                         adapter.updateData(parkhausList);
@@ -164,6 +182,22 @@ public class MainActivity extends AppCompatActivity {
             thread.start();
         } else {
             Toast.makeText(this, "no internet", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private static void sort(ArrayList<Parkhaus> list) {
+        //0 = don't sort, 1 = sort by name, 2 = sort by free places
+        switch (sortBy) {
+            case 0:
+                break;
+            case 1:
+                list.sort(Comparator.comparing((Parkhaus::getFirstChar)));
+                break;
+            case 2:
+                list.sort(Comparator.comparing((Parkhaus::getFreiAsInt)));
+                Collections.reverse(list);
+                Log.d("Sort", "Sort by free places");
+                break;
         }
     }
 

@@ -49,11 +49,18 @@ public class Parkhaus {
      * @return the percent of used places
      */
     public int getFreiAsInt() {
-        if(freiePlaetze.matches("[0-9]*")) {
+        if (freiePlaetze.matches("[0-9]*")) {
             return Integer.parseInt(freiePlaetze);
         } else {
             return -1;
         }
+    }
+
+    /**
+     * @return the first character of the name
+     */
+    public char getFirstChar() {
+        return name.charAt(0);
     }
 
     /**
