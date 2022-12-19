@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
      * @param menu The options menu in which you place your items.
      * @return You must return true for the menu to be displayed; if you return false it will not be shown.
      */
-    //TODO: RestrictedApi solve
+    //Future: RestrictedApi solve
     @SuppressLint("RestrictedApi")
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
