@@ -4,9 +4,13 @@
     <string name="refresh">Update</string>
     <string name="parking_garage">Parking Garage</string>
     <string name="ulm">Ulm</string>
-    <string name="no_open_times">No Opentimes available</string>
+    <string name="no_open_times">No Open times available</string>
     <string name="open_24h">Opened 24h every day</string>
     <string name="toolbar_title">Parking in Ulm</string>
     <string name="map_content">Parking Garage on the map</string>
     <string name="no_maps_app">No maps app installed</string>
+    <string name="sort">Sort by:</string>
+    <string name="sort_by_name">Name</string>
+    <string name="sort_by_free_places">Free places</string>
+    <string name="sort_reset">Reset</string>
 </resources>

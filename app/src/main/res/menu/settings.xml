@@ -5,14 +5,28 @@
         android:id="@+id/refresh_menu"
         android:icon="@drawable/refresh_icon"
         android:visible="true"
-        app:showAsAction="ifRoom"
+        app:showAsAction="never"
         android:title="@string/refresh" />
-    <!--
     <item
-        android:id="@+id/reset_menu"
-        android:title="@string/reset"
-        android:icon="@drawable/reset_icon"
+        android:id="@+id/sort_menu"
+        android:icon="@drawable/sort_icon"
         android:visible="true"
-        app:showAsAction="never" />
-        -->
+        app:showAsAction="never"
+        android:title="@string/sort">
+        <menu>
+            <group
+                android:id="@+id/group2"
+                android:checkableBehavior="none">
+                <item
+                    android:id="@+id/sort_sub1"
+                    android:title="@string/sort_by_name" />
+                <item
+                    android:id="@+id/sort_sub2"
+                    android:title="@string/sort_by_free_places" />
+                <item
+                    android:id="@+id/sort_sub3"
+                    android:title="@string/sort_reset" />
+            </group>
+        </menu>
+    </item>
 </menu>
