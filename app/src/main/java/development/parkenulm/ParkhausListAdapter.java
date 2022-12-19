@@ -138,11 +138,11 @@ public class ParkhausListAdapter extends BaseAdapter {
                             progressText.setTextColor(Color.RED);
                             progressBar.setTrackColor(Color.RED);
                         } else if (freiInt > 30 && quater) {
-                            progressText.setTextColor(Color.YELLOW);
-                            progressBar.setTrackColor(Color.YELLOW);
+                            progressText.setTextColor(Color.parseColor("#ff8000"));
+                            progressBar.setTrackColor(Color.parseColor("#ff8000"));
                         } else {
-                            progressText.setTextColor(Color.GREEN);
-                            progressBar.setTrackColor(Color.GREEN);
+                            progressText.setTextColor(Color.parseColor("#03b500"));
+                            progressBar.setTrackColor(Color.parseColor("#03b500"));
                         }
                     });
                 } else {
