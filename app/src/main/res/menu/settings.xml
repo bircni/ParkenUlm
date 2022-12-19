@@ -7,12 +7,24 @@
         android:visible="true"
         app:showAsAction="ifRoom"
         android:title="@string/refresh" />
-    <!--
     <item
-        android:id="@+id/reset_menu"
-        android:title="@string/reset"
-        android:icon="@drawable/reset_icon"
+        android:id="@+id/sort_menu"
         android:visible="true"
-        app:showAsAction="never" />
-        -->
+        app:showAsAction="never"
+        android:title="Sort by:">
+    <menu>
+        <group android:id="@+id/group2" android:checkableBehavior="single">
+            <item
+                android:id="@+id/sort_sub1"
+                android:title="SubMenu No. 1"
+                android:checkable="true"
+                android:enabled="true"/>
+            <item
+                android:id="@+id/sort_sub2"
+                android:title="SubMenu No. 2"
+                android:checkable="true"
+                android:enabled="true"/>
+        </group>
+    </menu>
+    </item>
 </menu>

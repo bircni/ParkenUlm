@@ -7,6 +7,7 @@ import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
@@ -25,6 +26,8 @@ import org.jsoup.nodes.Element;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -98,6 +101,14 @@ public class MainActivity extends AppCompatActivity {
             getData();
             return true;
         }
+        if (item.getItemId() == R.id.sort_sub1) {
+            Log.d("Sort", "Sort by name");
+            return true;
+        }
+        if (item.getItemId() == R.id.sort_sub2) {
+            Log.d("Sort", "Sort by free places");
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -137,6 +148,8 @@ public class MainActivity extends AppCompatActivity {
                         String open = Objects.requireNonNull(a.select("td").next().next().next().first()).text();
                         parkhausList.add(new Parkhaus(haus, platz, frei, open));
                     }
+                    parkhausList.sort(Comparator.comparing((Parkhaus::getFreiAsInt)));
+                    Collections.reverse(parkhausList);
                     Paper.book().write("ParkhausDB", parkhausList);
                     runOnUiThread(() -> {
                         adapter.updateData(parkhausList);
