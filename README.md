@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="500" src=".github/graphics/github-preview.png">
+  <img width="500" src="./docs/assets/graphics/github-preview.png">
   <br><br>
 </div>
 
@@ -8,9 +8,9 @@
 # ParkenUlm
 
 <div align="center">
-<a href='https://play.google.com/store/apps/details?id=development.parkenulm'><img alt='Get it on Google Play' src='.github/graphics/sources/badge_googleplay.png' height='80px'/></a>
-<a href='https://apt.izzysoft.de/fdroid/index/apk/development.parkenulm'><img alt='Get it on IzzyOnDroid' src='.github/graphics/sources/badge_izzyondroid.png' height='80px'/></a>
-<a href='https://github.com/bircni/ParkenUlm/releases/latest'><img alt='Get it on Github' src='.github/graphics/sources/badge_github.png' height='80px'/></a>
+<a href='https://play.google.com/store/apps/details?id=development.parkenulm'><img alt='Get it on Google Play' src='./docs/assets/graphics/badges/badge_googleplay.png' height='80px'/></a>
+<a href='https://apt.izzysoft.de/fdroid/index/apk/development.parkenulm'><img alt='Get it on IzzyOnDroid' src='./docs/assets/graphics/badges/badge_izzyondroid.png' height='80px'/></a>
+<a href='https://github.com/bircni/ParkenUlm/releases/latest'><img alt='Get it on Github' src='./docs/assets/graphics/badges/badge_github.png' height='80px'/></a>
 </div>
 
 ## About The Project
@@ -26,16 +26,16 @@
 ## Screenshots
 
 <div align="center">
-<img src=".github/graphics/ParkenUlm-dark-Pixel6.png" width="300"  />
-<img style="margin-left: 100px" src=".github/graphics/ParkenUlm-details-dark-Pixel6.png" width="300"/>
+<img src="./docs/assets/graphics/screenshots/ParkenUlm-dark-Pixel6.png" width="300"  />
+<img style="margin-left: 100px" src="./docs/assets/graphics/screenshots/ParkenUlm-details-dark-Pixel6.png" width="300"/>
 </div>
 </br>
 <details>
 <summary>Bright Mode</summary>
 </br>
 <div align="center">
-<img src=".github/graphics/ParkenUlm-bright-Pixel6.png" width="300"  />
-<img style="margin-left: 100px" src=".github/graphics/ParkenUlm-details-bright-Pixel6.png" width="300"/>
+<img src="./docs/assets/graphics/screenshots/ParkenUlm-bright-Pixel6.png" width="300"  />
+<img style="margin-left: 100px" src="./docs/assets/graphics/screenshots/ParkenUlm-details-bright-Pixel6.png" width="300"/>
 </div>
 </details>
 
