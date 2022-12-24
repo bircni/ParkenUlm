@@ -76,3 +76,4 @@ Distributed under the GNU General Public License v3.0. See `LICENSE` for more in
 - [Parken in Ulm](https://www.parken-in-ulm.de/) for the data
 - [@dj82atwork](https://github.com/dj82atwork) for the icon and testing
 - [@IzzySoft](https://github.com/IzzySoft) for deploying the app on IzzyOnDroid
+- [@AlexandreSanlim](https://github.com/alexandresanlim) for the website template
