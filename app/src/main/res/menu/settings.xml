@@ -8,6 +8,11 @@
         app:showAsAction="never"
         android:title="@string/refresh" />
     <item
+        android:id="@+id/action_share"
+        android:title="@string/share"
+        android:icon="@drawable/share_icon"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/sort_menu"
         android:icon="@drawable/sort_icon"
         android:visible="true"
@@ -29,4 +34,5 @@
             </group>
         </menu>
     </item>
+
 </menu>
