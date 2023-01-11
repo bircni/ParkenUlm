@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
             getData();
             return true;
         }
-        if (item.getItemId() == R.id.sort_sub2) {
+        if (item.getItemId() == R.id.sort_sub3) {
             Log.d("Sort", "Reset sort");
             sortBy = 0;
             Paper.book().write("sortBy", sortBy);
