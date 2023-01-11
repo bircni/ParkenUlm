@@ -14,4 +14,5 @@
     <string name="sort_by_free_places">Free places</string>
     <string name="sort_reset">Reset</string>
     <string name="share">Share</string>
+    <string name="error_share">Error while sharing</string>
 </resources>
