@@ -1,2 +1,0 @@
-<p><i>ParkenUlm</i> ist eine App, die dir alle Parkhäuser Ulms anzeigt und dir zeigt, wie voll welches Parkhaus ist. Klickst du auf einen Eintrag werden dir die Öffnungszeiten angezeigt und du hast die Möglichkeit dich zu dem Parkhaus navigieren zu lassen.</p>
-<p><b>Hinweis:</b> die App verwendet die Google Maps API und Daten von <a href='https://www.parken-in-ulm.de/' target='_blank' rel='nofollow noopener'>Parken in Ulm</a>.</p>

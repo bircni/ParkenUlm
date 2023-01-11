@@ -1,2 +1,0 @@
-<p><i>ParkenUlm</i> is an app that shows you all of the parking garages in Ulm and how full each parking garage is. If you click on an entry, the opening hours will be displayed and you can start a navigation to the parking garage.</p>
-<p><b>Note:</b> the app uses the Google Maps API and data from <a href='https://www.parken-in-ulm.de/' target='_blank' rel='nofollow noopener'>Parken in Ulm</a>.</p>
