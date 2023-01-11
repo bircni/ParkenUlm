@@ -103,13 +103,23 @@ public class MainActivity extends AppCompatActivity {
     private void share(Bitmap bitmap){
         String pathofBmp=
                 MediaStore.Images.Media.insertImage(this.getContentResolver(),
-                        bitmap,"title", null);
-        Uri uri = Uri.parse(pathofBmp);
+                        bitmap,"ParkenUlm-Screenshot", null);
+        Uri uri = null;
+        try {
+            uri = Uri.parse(pathofBmp);
+        } catch (Exception e) {
+            Log.d("Share", "share: " + e.getMessage());
+        }
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
-        shareIntent.setType("image/*");
-        shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
-        shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
-        startActivity(Intent.createChooser(shareIntent, getString(R.string.app_name)+": "+getString(R.string.share)));
+        if (uri != null) {
+            shareIntent.setType("image/*");
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
+            shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+            startActivity(Intent.createChooser(shareIntent, getString(R.string.app_name)+": "+getString(R.string.share)));
+        }
+        else {
+            Toast.makeText(this, getString(R.string.error_share), Toast.LENGTH_SHORT).show();
+        }
     }
 
     /**
