@@ -87,10 +87,9 @@ public class ParkhausListAdapter extends BaseAdapter {
             String search = activity.getResources().getString(R.string.parking_garage) + " " + db.getHaus() + " " + activity.getResources().getString(R.string.ulm);
             String url = "geo:0,0?q=" + search;
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-            intent.setPackage("com.google.android.apps.maps");
-            if (intent.resolveActivity(finalView.getContext().getPackageManager()) != null) {
+            try {
                 activity.startActivity(intent);
-            } else {
+            } catch (Exception e) {
                 Toast.makeText(activity, activity.getResources().getString(R.string.no_maps_app), Toast.LENGTH_SHORT).show();
             }
         });
