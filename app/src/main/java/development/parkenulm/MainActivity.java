@@ -21,9 +21,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
-import androidx.appcompat.widget.ShareActionProvider;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.MenuItemCompat;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import org.jsoup.Jsoup;
@@ -41,8 +39,6 @@ import java.util.Scanner;
 import io.paperdb.Paper;
 
 public class MainActivity extends AppCompatActivity {
-
-    ShareActionProvider shareActionProvider;
     ParkhausListAdapter adapter;
     //0 = don't sort, 1 = sort by name, 2 = sort by free places
     static int sortBy;
@@ -88,6 +84,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * @param view the given view
+     * @return the screenshot of the given view
+     */
     private Bitmap screenShot(View view) {
         Bitmap bitmap = Bitmap.createBitmap(view.getWidth(),view.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
@@ -95,6 +95,11 @@ public class MainActivity extends AppCompatActivity {
         return bitmap;
     }
 
+    /**
+     * Starts a Share Intent with the screenshot of the current view
+     *
+     * @param bitmap the given bitmap
+     */
     private void share(Bitmap bitmap){
         String pathofBmp=
                 MediaStore.Images.Media.insertImage(this.getContentResolver(),
@@ -120,8 +125,6 @@ public class MainActivity extends AppCompatActivity {
             MenuBuilder m = (MenuBuilder) menu;
             m.setOptionalIconsVisible(true);
         }
-        //MenuItem shareItem = menu.findItem(R.id.action_share);
-        //shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(shareItem);
         return true;
     }
 
@@ -164,6 +167,12 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Checks if the device is connected to the internet
+     *
+     * @param context the given context
+     * @return true if the device is connected to the internet, false if not
+     */
     public static boolean hasInternetConnection(final Context context) {
         final ConnectivityManager connectivityManager = (ConnectivityManager) context.
                 getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -173,6 +182,9 @@ public class MainActivity extends AppCompatActivity {
                 && capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED);
     }
 
+    /**
+     * Gets the data from the internet and updates the list
+     */
     public void getData() {
         Thread thread = new Thread(() -> {
             try {
@@ -218,6 +230,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Sorts the given list
+     *
+     * @param list the list to sort
+     */
     private static void sort(ArrayList<Parkhaus> list) {
         //0 = don't sort, 1 = sort by name, 2 = sort by free places
         switch (sortBy) {
@@ -234,6 +251,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Checks if the given string is null or empty
+     *
+     * @param s the string to check
+     * @return the updated string
+     */
     public String checkString(String s) {
         if (s.contains("/")) return s.substring(s.indexOf("/") + 2);
         else return s;
