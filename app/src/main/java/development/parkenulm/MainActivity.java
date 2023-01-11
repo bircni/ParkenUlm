@@ -3,20 +3,27 @@ package development.parkenulm;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.appcompat.widget.ShareActionProvider;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.MenuItemCompat;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import org.jsoup.Jsoup;
@@ -35,6 +42,7 @@ import io.paperdb.Paper;
 
 public class MainActivity extends AppCompatActivity {
 
+    ShareActionProvider shareActionProvider;
     ParkhausListAdapter adapter;
     //0 = don't sort, 1 = sort by name, 2 = sort by free places
     static int sortBy;
@@ -80,6 +88,24 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private Bitmap screenShot(View view) {
+        Bitmap bitmap = Bitmap.createBitmap(view.getWidth(),view.getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        view.draw(canvas);
+        return bitmap;
+    }
+
+    private void share(Bitmap bitmap){
+        String pathofBmp=
+                MediaStore.Images.Media.insertImage(this.getContentResolver(),
+                        bitmap,"title", null);
+        Uri uri = Uri.parse(pathofBmp);
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("image/*");
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
+        shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+        startActivity(Intent.createChooser(shareIntent, getString(R.string.app_name)+": "+getString(R.string.share)));
+    }
 
     /**
      * @param menu The options menu in which you place your items.
@@ -94,6 +120,8 @@ public class MainActivity extends AppCompatActivity {
             MenuBuilder m = (MenuBuilder) menu;
             m.setOptionalIconsVisible(true);
         }
+        //MenuItem shareItem = menu.findItem(R.id.action_share);
+        //shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(shareItem);
         return true;
     }
 
@@ -104,6 +132,10 @@ public class MainActivity extends AppCompatActivity {
      */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.action_share)
+        {
+            share(screenShot(findViewById(R.id.main_activity)));
+        }
         if (item.getItemId() == R.id.refresh_menu) {
             getData();
             return true;
