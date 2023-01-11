@@ -5,6 +5,7 @@
 
 [![Gradle-Build](https://github.com/bircni/ParkenUlm/actions/workflows/gradle.yml/badge.svg)](https://github.com/bircni/ParkenUlm/actions/workflows/gradle.yml)
 [![Release](https://img.shields.io/github/v/release/bircni/ParkenUlm?include_prereleases&style=plastic)]( https://github.com/bircni/ParkenUlm/releases)
+
 # ParkenUlm
 
 <div align="center">
