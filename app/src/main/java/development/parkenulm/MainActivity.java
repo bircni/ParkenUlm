@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
      *                           recently supplied in {@link #onSaveInstanceState}.
      *                           Note: Otherwise it is null.
      */
+    @SuppressWarnings("ConstantConditions")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
