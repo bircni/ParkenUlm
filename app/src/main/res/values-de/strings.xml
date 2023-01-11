@@ -13,4 +13,5 @@
     <string name="sort_by_name">Name</string>
     <string name="sort_by_free_places">Freie Plätze</string>
     <string name="sort_reset">Zurücksetzen</string>
+    <string name="share">Teilen</string>
 </resources>
