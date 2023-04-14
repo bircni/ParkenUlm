@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="500" src="./docs/assets/github-preview.png">
+  <img width="500" src="./docs/assets/github-header.png">
   <br><br>
   <h3><i>It's official - the App will be published on the iOS App Store later this year!</i></h3>
 </div>
