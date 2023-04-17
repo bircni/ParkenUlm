@@ -27,7 +27,10 @@ The Android App is distributed under the GNU General Public License v3.0.
 
 ## iOS Version
 
-coming later this year
+![](https://img.shields.io/badge/Testflight-Open-blue)
+
+Test it now on Testflight: [**https://testflight.apple.com/join/h57iCXAD**](https://testflight.apple.com/join/h57iCXAD)
+
 
 ## Thanks to
 
