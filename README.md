@@ -27,6 +27,10 @@ The Android App is distributed under the GNU General Public License v3.0.
 
 ## iOS Version
 
+<div align="center">
+<a href='https://testflight.apple.com/join/h57iCXAD'><img alt='Get it on Google Play' src='./docs/assets/badges/badge_testflight.png' height='60px'/></a>
+</div>
+
 coming later this year
 
 ## Thanks to
