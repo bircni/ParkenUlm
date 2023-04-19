@@ -4,6 +4,8 @@
   <h3><i>It's official - the App will be published on the iOS App Store later this year!</i></h3>
 </div>
 
+![](https://img.shields.io/badge/Testflight-Open-blue)
+
 # ParkenUlm
 
 ## About The Project
@@ -23,16 +25,16 @@ The data is provided by the city of Ulm.
 </div>
 
 Find the Android Repository [**here**](https://github.com/bircni/ParkenUlmAndroid)  
-The Android App is distributed under the GNU General Public License v3.0.
+The Android App is distributed under the GNU General Public License v3.0.  
+Find the Privacy Policy [**here**](https://bircni.me/ParkenUlm/privacy/Android)
 
 ## iOS Version
 
-![](https://img.shields.io/badge/Testflight-Open-blue)
-
 Test it now on Testflight: [**https://testflight.apple.com/join/h57iCXAD**](https://testflight.apple.com/join/h57iCXAD)
 
+Find the Privacy Policy [**here**](https://bircni.me/ParkenUlm/privacy/iOS)
 
 ## Thanks to
 
 - [@Parken in Ulm](https://www.parken-in-ulm.de/) for the data
-- [@dj82atwork](https://github.com/dj82atwork) for the icon
+<!-- [@dj82atwork](https://github.com/dj82atwork) for the icon -->
