@@ -20,21 +20,22 @@ The data is provided by the city of Ulm.
 
 <div align="center">
 <a href='https://play.google.com/store/apps/details?id=development.parkenulm'><img alt='Get it on Google Play' src='./docs/assets/badges/badge_googleplay.png' height='80px'/></a>
-<a href='https://apt.izzysoft.de/fdroid/index/apk/development.parkenulm'><img alt='Get it on IzzyOnDroid' src='./docs/assets/badges/badge_izzyondroid.png' height='80px'/></a>
+<a href='https://f-droid.org/packages/development.parkenulm'><img alt='Get it on F-Droid' src='./docs/assets/badges/badge_fdroid.png' height='80px'/></a>
 <a href='https://github.com/bircni/ParkenUlmAndroid/releases/latest'><img alt='Get it on Github' src='./docs/assets/badges/badge_github.png' height='80px'/></a>
 </div>
 
 Find the Android Repository [**here**](https://github.com/bircni/ParkenUlmAndroid)  
 The Android App is distributed under the GNU General Public License v3.0.  
-Find the Privacy Policy [**here**](https://bircni.me/ParkenUlm/privacy/Android)
+Find the Privacy Policy [**here**](./Android.md)
 
 ## iOS Version
 
 Test it now on Testflight: [**https://testflight.apple.com/join/h57iCXAD**](https://testflight.apple.com/join/h57iCXAD)
 
-Find the Privacy Policy [**here**](https://bircni.me/ParkenUlm/privacy/iOS)
+Find the Privacy Policy [**here**](./iOS.md)
 
 ## Thanks to
 
 - [@Parken in Ulm](https://www.parken-in-ulm.de/) for the data
-<!-- [@dj82atwork](https://github.com/dj82atwork) for the icon -->
+- [@dj82atwork](https://github.com/dj82atwork) for the first icon
+- [@Hermano]() for the new icon
