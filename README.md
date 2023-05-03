@@ -1,10 +1,7 @@
 <div align="center">
   <img width="500" src="./docs/assets/github-header.png">
   <br><br>
-  <h3><i>It's official - the App will be published on the iOS App Store later this year!</i></h3>
 </div>
-
-![](https://img.shields.io/badge/Testflight-Open-blue)
 
 # ParkenUlm
 
@@ -30,7 +27,9 @@ Find the Privacy Policy [**here**](./Android.md)
 
 ## iOS Version
 
-Test it now on Testflight: [**https://testflight.apple.com/join/h57iCXAD**](https://testflight.apple.com/join/h57iCXAD)
+<div align="center">
+<a href='https://apps.apple.com/de/app/id6447651336'><img alt='Get it on the App Store' src='./docs/assets/badges/badge_ios.svg' height='50px'/></a>
+</div>
 
 Find the Privacy Policy [**here**](./iOS.md)
 
