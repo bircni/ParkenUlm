@@ -12,12 +12,7 @@ Our Android app uses data obtained from
 [parken-in-ulm.de](https://www.parken-in-ulm.de/) to provide information
 within the app. However, we do not collect any personal data when you
 use our Android app. We do not collect your name, email address, or
-phone number. We also do not track information about your usage of the
-app, such as which features you use or which pages you visit.
-
-Our Android app does not use any third-party technologies to collect or
-track data about you. We also do not use tracking tools like cookies or
-similar technologies to gather information about your activities.
+phone number.
 
 If you send us an email or contact us through the app's contact form, we
 will only use your email address and any other information you provide
@@ -39,6 +34,19 @@ please contact us by [email](mailto:bircni@icloud.com).
 
 We reserve the right to update this privacy policy at any time.
 
-Last updated: \[19.04.2023\]
+Starting with version `2.1`, the Android app uses the Aptabase Dependency
+to collect anonymous usage data. This data is used to improve the app
+and its features and to fix errors. To get more information about the Aptabase
+Dependency, please have a look at the [Aptabase Privacy Policy](https://aptabase.com/legal/privacy).
+Data we collect will not be shared with third parties.
+The user can disable the data collection in the app settings.
+We will collect the following data:
+
+- Frequency of parking garage selections
+- Average duration of app usage
+- Your country
+- App version
+
+Last updated: \[22.06.2023\]
 
 [Back to main page](./README.md)
