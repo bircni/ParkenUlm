@@ -24,13 +24,13 @@ The data is provided by the city of Ulm.
 
 ## Android Version
 
-Find the Android Repository [**here**](https://github.com/bircni/ParkenUlmAndroid)  
+Find the Android Repository [**here**](https://github.com/bircni/bircni/blob/master/privacy/ParkenUlm-Android.md)  
 The Android App is distributed under the GNU General Public License v3.0.  
 Find the Privacy Policy [**here**](./Android.md)
 
 ## iOS Version
 
-Find the Privacy Policy [**here**](./iOS.md)
+Find the Privacy Policy [**here**](https://github.com/bircni/bircni/blob/master/privacy/ParkenUlm-iOS.md)
 
 ## Thanks to
 
