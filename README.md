@@ -24,9 +24,9 @@ The data is provided by the city of Ulm.
 
 ## Android Version
 
-Find the Android Repository [**here**](https://github.com/bircni/bircni/blob/master/privacy/ParkenUlm-Android.md)  
+Find the Android Repository [**here**](https://github.com/bircni/ParkenUlmAndroid)  
 The Android App is distributed under the GNU General Public License v3.0.  
-Find the Privacy Policy [**here**](./Android.md)
+Find the Privacy Policy [**here**](https://github.com/bircni/bircni/blob/master/privacy/ParkenUlm-Android.md)
 
 ## iOS Version
 
