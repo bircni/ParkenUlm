@@ -1,4 +1,5 @@
 {
+  "type": "info",
   "name": "Info",
   "id": "info15-12-23",
   "text": "Currently we have some outages as the datasource was moved."
