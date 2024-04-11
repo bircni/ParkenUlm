@@ -3,5 +3,6 @@
   "name": "Info",
   "id": "info25-02-24",
   "text": "Thanks for all the new downloads!\nUnfortunately, no live data is currently displayed due to a change in the parking guidance system.\nThe data will be available again soon!",
-  "website": "https://parken-in-ulm.de/blog/aktuelles-1/wir-erneuern-unser-parkleitsystem-fur-sie-1"
+  "website": "https://parken-in-ulm.de/blog/aktuelles-1/wir-erneuern-unser-parkleitsystem-fur-sie-1",
+  "additionalinfo": "Currently no live data can be displayed."
 }
