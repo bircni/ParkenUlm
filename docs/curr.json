@@ -2,7 +2,14 @@
   "os": "ios",
   "version": "3.0",
   "name": "Info",
-  "id": "info19-04-24",
+  "id": "info21-04-24",
   "text": "The data is live again.\nWelcome back to ParkenUlm!",
-  "additionalinfo": "New Update is live."
+  "additionalinfo": "New Update is live.",
+  "survey": {
+    "title": "Umfrage",
+    "question": "Wie gefällt dir die App?",
+    "option1": "Sehr gut",
+    "option2": "Gut",
+    "key": "erste-umfrage"
+  }
 }
