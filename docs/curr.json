@@ -1,5 +1,6 @@
 {
-  "type": "info",
+  "os": "ios",
+  "version": "3.0",
   "name": "Info",
   "id": "info19-04-24",
   "text": "The data is live again.\nWelcome back to ParkenUlm!",
