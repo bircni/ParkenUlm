@@ -1,0 +1,14 @@
+{
+  "version": "4.0",
+  "name": "Info",
+  "id": "info21-04-24",
+  "text": "The data is live again.\nWelcome back to ParkenUlm!",
+  "additionalinfo": "New Update is live.",
+  "survey": {
+    "title": "Umfrage",
+    "question": "Wie gefällt Ihnen die App?",
+    "option1": "Gut",
+    "option2": "Geht so",
+    "key": "erste-umfrage"
+  }
+}
